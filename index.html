@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
+  <title>UN___ A look at Spring 2020</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Lexend+Zetta&display=swap');
+  </style>
+
+  <link href="styles.css" rel="stylesheet" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+
+  
+</head>
+
+<body onload="week1()">
+	
+	
+	<div class="UN-page">
+	
+      <div class="header">
+
+        <div class="UN-logo">
+			   <img src="UN_logo.gif" alt="UN logo" id="logo">
+        </div>
+
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="about">
+            <h1>About</h1>
+            <p> In the spring of 2020, SARS-CoV-2 became a global pandemic and sent the world into a state of uncertainty. When classes at Temple University suddenly became physically distant, GAD 3023, the Creative Coding class in Graphic &amp; Interactive Design, began collecting the experiences of students at Tyler School of Art and Architecture to visualize how these experiences and mindsets changed over time. Each week of online instruction in Spring 2020 is represented here in self-reported student emotional states, quotes from surveyed students, and news headlines. 
+
+            <h2>Designers:</h2><p> Xinjian Li, Emily Cerequas, Prashansa Thapa, Julia King, Alex Kim</p>
+            <h2>Instructor:</h2><p>Jenny Kowalski</p>
+            <h2>Institution:</h2><p>Tyler School of Art and Architecture, Temple University</p>
+          </div>
+        </div>
+        <span class= "open" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+		  <!-- NAV ENDS HERE -->
+      </div>
+      <div class = "grid-container">
+        <div class="chart" id="chart">
+        </div>
+        <div class="quotes" id="quotes">
+        </div>
+        <div class="news" id="news">
+        </div>
+        <div class="timeline">
+        	<ol id ="timelineWeeks">
+          		<li>
+          			<p class="week">3/13&ndash;3/19</p>
+           			<span class="point" id="point1" onclick="week1()"></span>
+          		</li>
+          		<li>
+          			<p class="week">3/20&ndash;3/26</p>
+           			<span class="point" id="point2" onclick="week2()"></span>
+          		</li>
+          		<li>
+          			<p class="week">3/27&ndash;4/2</p>
+           			<span class="point" id="point3" onclick="week3()"></span>
+          		</li>
+          		<li>
+          			<p class="week">4/3&ndash;4/9</p>
+           			<span class="point" id="point4" onclick="week4()"></span>
+          		</li>
+          		<li>
+          			<p class="week">4/10&ndash;4/16</p>
+           			<span class="point" id="point5" onclick="week5()"></span>
+          		</li>
+          		<li>
+          			<p class="week">4/17&ndash;4/23</p>
+           			<span class="point" id="point6" onclick="week6()"></span>
+          		</li>
+          	</ol>	
+
+        </div>
+      </div>
+	</div>
+</body>
+</html>
+
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").classList.add('openNavSide');
+    document.getElementById("mySidenav").classList.remove('closeNavSide');
+
+    document.getElementById("main").classList.add('openNavMain');
+    document.getElementById("main").classList.remove('closeNavMain');
+  }
+  function closeNav() {
+    document.getElementById("mySidenav").classList.add('closeNavSide');
+    document.getElementById("mySidenav").classList.remove('openNavSide');
+    document.getElementById("main").classList.add('closeNavMain');
+    document.getElementById("main").classList.remove('openNavMain');
+  }
+
+  function week1() {
+    document.getElementById('chart').innerHTML = 
+    '<iframe class="" src="chart/chart_week_1/index.html" width="100%" height= "100%" ></iframe>';
+    document.getElementById('quotes').innerHTML = 
+    '<iframe class="" src="quotes/quotes_week_1/index.html" width="100%" height= "100%" ></iframe>';
+    document.getElementById('news').innerHTML = 
+    '<iframe src="news/news_1.html" width="100%" height= "100%"></iframe>';
+    for (let i=1; i<7; i++) {
+    document.getElementById('point' + i).classList.remove('point-active');
+    }
+    document.getElementById('point1').classList.add('point-active');
+
+  }
+  function week2() {
+    document.getElementById('chart').innerHTML = 
+    '<iframe class="" src="chart/chart_week_2/index.html" width="100%" height= "100%" ></iframe>';
+    document.getElementById('quotes').innerHTML = 
+    '<iframe class="" src="quotes/quotes_week_2/index.html" width="100%" height= "100%" ></iframe>';
+    document.getElementById('news').innerHTML = 
+    '<iframe src="news/news_2.html" width="100%" height= "100%"></iframe>';
+    for (let i=1; i<7; i++) {
+    document.getElementById('point' + i).classList.remove('point-active');
+    }
+    document.getElementById('point2').classList.add('point-active');
+  }
+  function week3() {
+    document.getElementById('chart').innerHTML = 
+    '<iframe class="" src="chart/chart_week_3/index.html" width="100%" height= "100%" ></iframe>';
+    document.getElementById('quotes').innerHTML = 
+    '<iframe class="" src="quotes/quotes_week_3/index.html" width="100%" height= "100%" ></iframe>';
+    document.getElementById('news').innerHTML = 
+    '<iframe src="news/news_3.html" width="100%" height= "100%"></iframe>';
+    for (let i=1; i<7; i++) {
+    document.getElementById('point' + i).classList.remove('point-active');
+    }
+    document.getElementById('point3').classList.add('point-active');
+  }
+  function week4() {
+    document.getElementById('chart').innerHTML = 
+    '<iframe class="" src="chart/chart_week_4/index.html" width="100%" height= "100%" ></iframe>';
+    document.getElementById('quotes').innerHTML = 
+    '<iframe class="" src="quotes/quotes_week_4/index.html" width="100%" height= "100%" ></iframe>';
+    document.getElementById('news').innerHTML = 
+    '<iframe src="news/news_4.html" width="100%" height= "100%"></iframe>';
+    for (let i=1; i<7; i++) {
+    document.getElementById('point' + i).classList.remove('point-active');
+    }
+    document.getElementById('point4').classList.add('point-active');
+  }
+  function week5() {
+    document.getElementById('chart').innerHTML = 
+    '<iframe class="" src="chart/chart_week_5/index.html" width="100%" height= "100%" ></iframe>';
+    document.getElementById('quotes').innerHTML = 
+    '<iframe class="" src="quotes/quotes_week_5/index.html" width="100%" height= "100%" ></iframe>';
+    document.getElementById('news').innerHTML = 
+    '<iframe src="news/news_5.html" width="100%" height= "100%"></iframe>';
+    for (let i=1; i<7; i++) {
+    document.getElementById('point' + i).classList.remove('point-active');
+    }
+    document.getElementById('point5').classList.add('point-active');
+  }
+  function week6() {
+    document.getElementById('chart').innerHTML = 
+    '<iframe class="" src="chart/chart_week_6/index.html" width="100%" height= "100%" ></iframe>';
+    document.getElementById('quotes').innerHTML = 
+    '<iframe class="" src="quotes/quotes_week_6/index.html" width="100%" height= "100%" ></iframe>';
+    document.getElementById('news').innerHTML = 
+    '<iframe src="news/news_6.html" width="100%" height= "100%"></iframe>';
+    for (let i=1; i<7; i++) {
+    document.getElementById('point' + i).classList.remove('point-active');
+    }
+    document.getElementById('point6').classList.add('point-active');
+  }
+
+</script>

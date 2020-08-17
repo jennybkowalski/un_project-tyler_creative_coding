@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Lexend+Zetta&display=swap');
+@keyframes ticker {
+	0%   {margin-top: 0}
+	25%  {margin-top: -15%}
+	50%  {margin-top: -30%}
+	75%  {margin-top: -50%}
+	100% {margin-top: 0}
+}
+
+body { 
+  background: #271E4C; 
+  width: 95%; 
+  height: 100%; 
+  padding-right: 5%;
+  font-size:.8em;  
+}
+
+.news {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding:0;
+  overflow: hidden;
+} 
+
+.news ul {
+  float: left;
+  padding-left: 20px;
+  animation: ticker 30s cubic-bezier(1, 0, .5, 0) infinite;
+  -webkit-user-select: none
+}
+
+.news ul li {line-height: 1.25em; list-style: none; margin-bottom: 1em; }
+
+.news ul li a {
+  color: #6672b3;
+  text-decoration: none;
+  font: 1em 'Lexend Zetta', sans-serif;
+}
+
+.news ul li span {
+  color: #B8346A;
+  text-decoration: none;
+  font: 1em 'Lexend Zetta', sans-serif;
+}
+
+.news ul:hover { animation-play-state: paused }
+.news span:hover+ul { animation-play-state: paused }
+
+/* OTHER COLORS */
+
+.red { background: #d23435 }
+.red span { background: #c22b2c }

@@ -1,0 +1,86 @@
+.contain{
+width:90vw;
+height:90vw;
+}
+
+.timeline{
+	font-size: 10pt;
+	position: relative;
+	font-weight: 100;
+	right:50%;
+	text-align: right;
+	margin-top:200px;
+}
+
+.one:hover{
+	font-size: 16pt;
+}
+
+.two:hover{
+	font-size: 16pt;
+}
+
+.three:hover{
+	font-size: 16pt;
+}
+
+.four:hover{
+	font-size: 16pt;
+}
+
+
+.grid1{
+	display:none;
+	width:400px;
+	position: absolute;
+	right:-450px;
+	top:-50px;
+}
+
+.grid2{
+	display:none;
+	width:400px;
+	position: absolute;
+	right:-450px;
+	top:-50px;
+}
+
+.grid3{
+	display:none;
+	width:400px;
+	position: absolute;
+	right:-450px;
+	top:-50px;
+}
+
+.grid4{
+	display:none;
+	width:400px;
+	position: absolute;
+	right:-450px;
+	top:-50px;
+}
+
+.one:hover .grid1{
+	display: block;
+	opacity: 100;
+
+}
+
+.two:hover .grid2{
+	display: block;
+	opacity: 100;
+
+}
+
+.three:hover .grid3{
+	display: block;
+	opacity: 100;
+
+}
+
+.four:hover .grid4{
+	display: block;
+	opacity: 100;
+
+}

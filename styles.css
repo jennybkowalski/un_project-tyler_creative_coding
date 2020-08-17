@@ -1,0 +1,433 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+.chart { grid-area: chart;}
+.quotes { grid-area: quotes;}
+.news { grid-area: news;}
+.timeline { grid-area: timeline;}
+
+
+.grid-container {
+  width: 100vw;
+  height:calc(100vh - 45px);
+  display: grid;
+  grid-auto-rows: minmax(10vh, auto);
+  grid-template-areas:
+    'chart chart quotes'
+    'chart chart quotes'
+    'chart chart news'
+    'timeline timeline timeline';
+  background-color: #271E4C;
+}
+
+iframe {
+    width: 100%;
+    height:100%;
+    padding: 0;
+    margin: 0;
+    border:none;
+}
+
+#news-scroll {
+  overflow:hidden;
+}
+
+#news-scroll li {
+  display:inline-block;
+}
+
+#news-scroll li a {
+ font-family: 'Lexend Giga', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  color: hotpink;
+  text-decoration: none;
+}
+
+h1 {
+	font-family: 'Lexend Zetta', sans-serif;
+	color: white;
+	font-size: 24px;
+}
+
+h2 {
+	font-family: 'Lexend Deca', sans-serif;
+	color: white;
+	font-size: 18px
+}
+
+p {
+	font-family: 'Lexend Deca', sans-serif;
+	color: white;
+	font-size: 16px;
+}
+
+.UN-page {
+	display: flex;
+	flex-direction: column;
+}
+
+.head-nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: #ffffff;
+	width: 100%;
+	height: 50px;
+	align-content: center;
+}
+
+.UN-logo {
+	margin-left: 3em;
+}
+
+#logo {
+	width: 12em;
+	height:auto;
+	margin: 10px 0px 0px 0px;
+}
+
+
+.UN-iframe {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	align-content: center;
+}
+
+.about {
+	background-color: #6570B5;
+  display: flex;
+	flex-direction: row;
+
+}
+
+
+/*START NAV*/
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #6570B5;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.about{
+  font-family: 'Lexend Zetta', sans-serif;
+  position: absolute;
+  padding: 8px 32px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.about p{
+  font-size: 14px;  
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.open{
+  position: absolute;
+  right:25px;
+  top:5px;
+  color: #271E4C;
+}
+
+.openNavSide{
+  width: 450px;
+}
+
+.closeNavSide{
+  width:0px;
+}
+
+.openNavMain{
+  marginRight:450px;
+}
+
+.closeNavMain{
+  marginRight:0px;
+}
+
+
+@media screen and (max-width: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+
+  .openNavSide{
+    width: 100vw;
+  }
+
+  .closeNavSide{
+    width:0px;
+  }
+
+  .openNavMain{
+    marginRight:100vw;
+  }
+
+  .closeNavMain{
+    marginRight:0px;
+  }
+
+
+}
+
+/*END NAV*/
+
+/*MAIN BODY*/
+#main {
+  /*transition: margin-left .5s;*/
+  padding: 16px;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+/* ---- Background ---- */
+html, body {
+  color: #271E4C;
+  background: transparent;
+  min-width: 700px;
+}
+
+/* ---- Timeline ---- */
+#timelineWeeks {
+  position: fixed;
+  display: block;
+  margin: 50px 0;
+  height: 4px;
+  background-image: linear-gradient(to right, #271E4C , #D12178);
+  width:100vw;
+}
+
+/* ---- Timeline elements ---- */
+#timelineWeeks li {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 16%;
+  font: bold 14px Trebuchet MS, sans-serif;
+  height:100%;
+}
+
+#timelineWeeks li .week {
+  padding-top: .5em;
+  color: #B8346A;
+}
+
+/* ---- circles ---- */
+#timelineWeeks li .point {
+  content: "";
+  top: -4px;
+  display: inline;
+  width: 1em;
+  height: 1em;
+  border: 2px transparent;
+  border-radius: 3em;
+  position: absolute;
+}
+
+.point {
+	height: 3em;
+	width: 3em;
+	background-color: #B8346A;
+	border-radius: 50%;
+	display: inline-block;
+	box-shadow: 0px 0px 0px 6px #271E4C;
+}
+
+.point:hover {
+  cursor: pointer;
+	animation-name: point-select;
+	animation-duration: .75s;
+	background-color: #6570B5;
+}
+
+.point-active {
+  background-color: #6672b3;
+}
+
+
+@keyframes point-select {
+	0% {
+		background-color: #B8346A;
+	}
+	100% {
+		background-color: #6570B5;
+	}
+}
+
+
+
+/*Source: https://www.w3schools.com/howto/howto_js_dropdown.asp*/
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: rgba(0,0,0,0);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: rgba(0,0,0,0);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+	margin-right: 3em;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  /*background-color: #6570B5;*/
+  width: 50vw;
+	margin-left: -45.5vw;
+  /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+  z-index: 1;
+	padding: 2em;
+	height: 50vw;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/*.UN-iframe {
+	color: #8D8D8D;
+	background-color: #271E4C;
+}*/
+
+@media screen and (max-height: 550px) {
+  .grid-container {
+    grid-template-columns: minmax(10vw, 25vw);
+    grid-auto-rows: minmax(10vh, auto);
+    grid-template-areas:
+    'chart chart quotes'
+    'chart chart news'
+    'timeline timeline timeline'
+    'timeline timeline timeline';
+    background-color: #271E4C;
+  }
+
+  #timelineWeeks {
+    position: fixed;
+    display: block;
+    margin: 10px 0 0 0;
+    height: 4px;
+    background-image: linear-gradient(to right, #271E4C , #D12178);
+    width:100vw;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .grid-container {
+    width: 100vw;
+    grid-template-columns: minmax(10vw, 25vw);
+    grid-auto-rows: minmax(10vh, auto);
+    grid-template-areas:
+      'timeline chart chart'
+      'timeline chart chart'
+      'timeline chart chart'
+      'timeline quotes quotes'
+      'timeline news news';
+  }
+}
+
+@media screen and (max-width: 700px) {
+
+  #timelineWeeks {
+  position: fixed;
+  display: block;
+  margin: 0 0 0 1.5em;
+  padding:0;
+  width: 4px;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #271E4C , #D12178);
+  }
+
+  #timelineWeeks li {
+    position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-top: 7vh;
+  }
+
+  #timelineWeeks li .week {
+    padding-top: .5vh;
+    padding-left: .5em; 
+    width: 5em;
+  }
+
+  /* ---- circles ---- */
+  #timelineWeeks li .point {
+    content: "";
+    left: -4px;
+    display: inline;
+    width: 1em;
+    height: 1em;
+    border: 2px transparent;
+    border-radius: 3em;
+    position: absolute;
+  }
+
+
+}
